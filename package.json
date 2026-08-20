@@ -1,0 +1,12 @@
+{
+  "name": "reconocimiento-emociones",
+  "version": "1.0.0",
+  "description": "Reconocimiento de emociones en tiempo real con face-api.js",
+  "scripts": {
+    "build": "node build.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}

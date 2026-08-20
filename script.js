@@ -142,11 +142,7 @@
     }
   }
 
-  function topExpr(expr){
-    let key='neutral', v=-1;
-    for(const k in expr){ if(expr[k]>v){ v=expr[k]; key=k; } }
-    return {key, v};
-  }
+ const { topExpr } = (typeof MoodUtils !== 'undefined') ? MoodUtils : { topExpr: null };
 
   function updatePanel(r){
     const expr = r.expressions;
