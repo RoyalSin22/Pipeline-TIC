@@ -23,20 +23,20 @@ jobs:
           name: build-dist
           path: dist/
 
-test:
-  name: 2. Pruebas automatizadas
-  needs: build
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-    - run: npm ci  # Use npm ci instead of npm install
-    - name: Ejecutar pruebas unitarias (Jest)
-      run: npm test -- --ci --coverage
-    - name: Auditoria de seguridad de dependencias
-      run: npm audit --audit-level=high || true
+  test:
+    name: 2. Pruebas automatizadas
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - name: Ejecutar pruebas unitarias (Jest)
+        run: npm test -- --ci --coverage
+      - name: Auditoria de seguridad de dependencias
+        run: npm audit --audit-level=high || true
 
   deploy:
     name: 3. Despliegue simulado
