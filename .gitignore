@@ -1,0 +1,1 @@
+"node_modules/`ndist/" | Out-File -Encoding utf8 .gitignore
