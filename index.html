@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reconocimiento de Emociones</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Reconocimiento de Emociones</h1>
+      <div class="sub">Face API.js · Análisis facial en tiempo real en tu navegador</div>
+    </div>
+    <div class="badge"><span class="dot" id="liveDot"></span><span id="statusTxt">Modelos sin cargar</span></div>
+  </header>
+
+  <div class="grid">
+    <!-- Cámara -->
+    <div class="card">
+      <div class="videoBox" id="videoBox">
+        <video id="video" autoplay playsinline muted></video>
+        <canvas class="overlay" id="overlay"></canvas>
+        <div class="empty" id="empty">
+          <div style="font-size:40px">📷</div>
+          <div>Pulsa <b>Iniciar</b> para activar tu cámara.<br>Todo el procesamiento ocurre localmente.</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="primary" id="startBtn">Iniciar</button>
+        <button id="stopBtn" disabled>Detener</button>
+        <button id="snapBtn" disabled>Capturar</button>
+      </div>
+      <div class="loader" id="loader"></div>
+    </div>
+
+    <!-- Respuesta adaptada + métricas -->
+    <div class="card">
+      <div class="mood-hero">
+        <div class="mood-emoji" id="moodEmoji">🙂</div>
+        <div class="mood-name" id="moodName">esperando…</div>
+        <div class="mood-msg" id="moodMsg">Inicia la cámara para detectar tu estado de ánimo.</div>
+        <div class="mood-conf" id="moodConf"></div>
+      </div>
+
+      <div class="bars" id="bars"></div>
+
+      <div class="meta">
+        <div class="chip"><b id="ageVal">–</b><span>Edad aprox.</span></div>
+        <div class="chip"><b id="genderVal">–</b><span>Género aprox.</span></div>
+        <div class="chip"><b id="facesVal">0</b><span>Rostros</span></div>
+      </div>
+
+      <div class="suggest" id="suggest">Las sugerencias adaptadas a tu ánimo aparecerán aquí.</div>
+    </div>
+  </div>
+
+  <footer>
+    Johan Christopher Barrera Barrera
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
